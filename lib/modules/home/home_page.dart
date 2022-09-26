@@ -13,7 +13,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final homeController = HomeController();
   final pages = [
-    Container(color: Colors.red,),
+    Container(
+      color: Colors.red,
+    ),
     Container(color: Colors.blue)
   ];
   @override
@@ -60,16 +62,14 @@ class _HomePageState extends State<HomePage> {
             IconButton(
               onPressed: () {
                 homeController.setPage(0);
-                setState(() {
-                  
-                });
+                setState(() {});
               },
               icon: Icon(Icons.home),
               color: AppColors.primary,
             ),
             GestureDetector(
               onTap: () {
-                ('clicou!');
+                Navigator.pushNamed(context, "/barcode_scanner");
               },
               child: Container(
                 width: 56,
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(6)),
                 child: IconButton(
                     onPressed: () {
-                      
+                      Navigator.pushNamed(context, "/barcode_scanner");
                     },
                     icon: Icon(
                       Icons.add_box_outlined,
@@ -90,10 +90,9 @@ class _HomePageState extends State<HomePage> {
             IconButton(
                 onPressed: () {
                   homeController.setPage(1);
-                  setState(() {
-                    
-                  });
-                }, icon: Icon(Icons.description_outlined)),
+                  setState(() {});
+                },
+                icon: Icon(Icons.description_outlined)),
           ],
         ),
       ),
